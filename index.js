@@ -77,10 +77,11 @@ const filterStudents = () => {
   if (nameInput) {
     const filterdData = students.filter(student => student.name.toLocaleLowerCase().includes(nameInput.toLocaleLowerCase()))
     console.log('filter students', filterdData)
-    displayStudents(filterdData)}
+    displayStudents(filterdData)
+  }
 
   else if (ageInput) {
-    let filterdData = students.filter(student => student.age === +ageInput)
+    const filterdData = students.filter(student => student.age === +ageInput)
     console.log('filter students', filterdData)
     displayStudents(filterdData)
   }
