@@ -78,17 +78,15 @@ const filterStudents = () => {
     const filterdData = students.filter(student => student.name.toLocaleLowerCase().includes(nameInput.toLocaleLowerCase()))
     console.log('filter students', filterdData)
     displayStudents(filterdData)
-  }
-
-  else if (ageInput) {
+  } else if (ageInput) {
     const filterdData = students.filter(student => student.age === +ageInput)
     console.log('filter students', filterdData)
     displayStudents(filterdData)
   }
-
-  console.log('filter students', filterdData)
-  displayStudents(filterdData)
+//   console.log('filter students', filterdData)
+//   displayStudents(filterdData)
 }
+filterStudents()
 
 const refreshPage = () => {
   location.reload()
