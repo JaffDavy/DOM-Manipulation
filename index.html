@@ -3,9 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./assets/styles/styles.css.css">
+    <title>DOM Manipulation</title>
 </head>
 <body>
-    
+    <h1>STUDENT FILTER</h1>
+    <form id="filterform">
+        <label for="name">Name</label>
+        <input type="text" id="name-input" placeholder="Enter student's name">
+        <label for="age">Age</label>
+        <input type="text" id="age-input" placeholder="Enter student's age">
+        <button type="button" onclick="filterStudents(students)">Filter</button>
+        <button type="button" onclick="refreshPage()">Refresh</button>
+    </form>
+    <section>
+        <h2 class="title">Students Information</h2>
+    <table id="student-list">
+        <tr id="th">
+            <div id="initials"><th>Initials</th></div>
+            <div id="name"><th>Name</th></div>
+            <div id="age"><th>Age</th></div>
+            <th id="delete">Delete</th>
+        </tr>
+    </table>
+</section>
+    <p id="result"></p>
+    <script src="./index.js"></script>
 </body>
 </html>
