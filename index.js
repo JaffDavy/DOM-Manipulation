@@ -1,9 +1,9 @@
 let students = [
-  { name: 'Focous', age: 23 }, 
-  { name: 'Ekim', age:  19 },
+  { name: 'Focous', age: 23 },
+  { name: 'Ekim', age: 19 },
   { name: 'Frikky', age: 20 },
   { name: 'Ace', age: 19 },
-  { name: 'Yong', age: 17 }, 
+  { name: 'Yong', age: 17 },
   { name: 'Kyrios', age: 19 },
   { name: 'Dax', age: 20 },
   { name: 'Casper', age: 16 },
@@ -34,6 +34,7 @@ function searchStudent (stud) {
        <td><button id ="delete" class = "delete-btn">Delete</button></td>
     </tr>`
 }
+stud()
 
 function displayStudents (students) {
   const studentsList = document.getElementById('student-list')
@@ -73,13 +74,13 @@ const filterStudents = () => {
   const nameInput = document.getElementById('name-input').value.toLowerCase()
   const ageInput = parseInt(document.getElementById('age-input').value)
 
-    if (nameInput) {
+  if (nameInput) {
     const filterdData = students.filter(student => student.name.toLocaleLowerCase().includes(nameInput.toLocaleLowerCase()))
     console.log('filter students', filterdData)
-    displayStudents(filterdData)
-  }
+    displayStudents(filterdData)}
+
   else if (ageInput) {
-    const filterdData = students.filter(student => student.age === +ageInput)
+    let filterdData = students.filter(student => student.age === +ageInput)
     console.log('filter students', filterdData)
     displayStudents(filterdData)
   }
@@ -91,6 +92,8 @@ const filterStudents = () => {
 const refreshPage = () => {
   location.reload()
 }
+refreshPage()
+filterStudents()
 
 function userDelete () {
   const deleteButton = document.querySelectorAll('.delete-btn')
@@ -102,9 +105,9 @@ function userDelete () {
 
       // Remove all students with the same age from the array
       const updatedStudents = students.filter(student => student.age !== ageToDelete)
-        students = updatedStudents
+      students = updatedStudents
 
-            // Update the display
+      // Update the display
       displayStudents(updatedStudents)
     })
   })
